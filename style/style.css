@@ -75,10 +75,9 @@ nav {
     padding: 10px;
     box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.400);
     font-weight: bold;
-    text-align: center;
 }
 nav > a {
-    color: white;
+    color: var(--cor1);
     padding: 10px;
     border-radius: 5px;
     text-decoration: none;
