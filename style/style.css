@@ -1,0 +1,213 @@
+@charset "UTF-8";
+
+/*  
+#c5ebd6
+#83e1ad
+#3ddc84
+#2fa866
+#1a5c37
+#063d1e
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+@font-face {
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+:root { /* criando variáveis globais para as minhas cores */
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --fonte-padrao: arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue';
+    --fonte-android: 'Android', sans-serif;
+}
+
+ * { /* tirando 'margin' e 'padding' do projeto inteiro usando '*' */
+    margin: 0px;
+    padding: 0px;
+}
+
+body { 
+    background-color: var(--cor0);
+    font-family: var(--fonte-padrao);
+    overflow-x: hidden; /* remover barra de rolagem horizontal 'x' */
+}
+
+a.externo::after { /* adicionando conteudo no css sem mexer no html usando '::after' */
+    content: '\1F517';
+}
+header {
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;    
+}
+header > h1 {
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-size: 4em;
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.466);
+}
+header > p {    
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    color: white;
+    max-width: 600px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    margin: auto; /* centralizar na tela */
+    text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.400);
+}
+nav {
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.400);
+    font-weight: bold;
+    text-align: center;
+}
+nav > a {
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: 0.2s;    
+}
+nav > a:hover {
+    background-color: var(--cor3);
+    color: var(--cor5);
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5);     
+}
+main {
+    min-width: 300px;
+    max-width: 1000px;
+    background-color: white;    
+    margin: auto;  
+    margin-bottom: 30px;  
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+main h1 {                               /* 'main h1' vão ser todas as 'h1' que estiverem em 'main */
+    color: var(--cor5);                 /* 'main > h1' vão ser só os 'h1' filhos diretamente da 'main' */
+    font-family: var(--fonte-android);    
+    font-weight: normal;
+    font-size: 1.8em;
+}
+article > p::first-letter {
+    font-family: var(--fonte-android);
+    font-size: 2em;                /* Deixa a letra bem grande */
+    font-weight: bold;
+    /*float: left;*/                 /* Faz o texto "correr" em volta dela */
+    line-height: 1;                  /* Ajusta a altura da linha para não criar buracos */
+    padding: 0px 3px 0px 0px;        /* Dá um espacinho para o texto não colar nela */
+    color: var(--cor5);
+    /*background-image: linear-gradient(to right, var(--cor1), transparent);*/
+}
+main h2 {
+    font-family: var(--fonte-android);
+    color: var(--cor4);
+    font-size: 1.3em;
+    font-weight: normal;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    text-indent: 8px;
+}
+main p {
+    margin: 10px 0px 15px 0px;
+    text-align: justify;
+    text-indent: 30px; /* aquele espaço antes de começar o parágrafo */
+    line-height: 2em; /* aquele espaço de altura entre as linhas */
+    font-size: 1em;
+}
+main strong {
+    color: var(--cor4);
+    font-weight: bold;
+    background-color: var(--cor1);
+    padding: 2px 6px;
+}
+main a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor5);
+    background-color: var(--cor1);
+    padding: 2px 6px;
+}
+main a:hover {
+    text-decoration: underline;
+    color: var(--cor4);
+}
+main img {
+    width: 100%;
+    border-radius: 10px;
+}
+main img.pequena {
+    max-width: 350px;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+}
+div.video {
+    background-color: var(--cor5);
+    margin: 0px 0px 30px 0px; /* espaço do canto da janela */
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 padrão */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.500);
+}
+div.video > iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%; 
+    height: 80%;
+    transform: translate(-50%, -50%);    
+}
+aside {
+    background: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.300);
+}
+aside > h3 {
+    background-color: var(--cor4);
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px;    
+}
+aside > ul {
+    list-style-type: '\2714\00A0\00A0'; /* colocar '\' antes do código do emoji, '00A0' é espaço entre emoji e texto */
+    list-style-position: inside; 
+    columns: 2; /* dividir em 2 colunas */
+}
+footer {
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+footer a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--cor1);
+}
